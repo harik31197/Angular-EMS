@@ -11,7 +11,28 @@
      </div>
     <div class="col-md-6 col-sm-12">
        <div class="login-form">
-          <form>
+        <mat-card>
+          <mat-card-title>Login</mat-card-title>
+          <mat-card-content>
+            <form #form = "ngForm" (ngSubmit)="onSubmit(form)">
+              <div>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Username" name="username" ngModel  required>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Password" name="password" ngModel  required>
+                </mat-form-field>
+              </div>
+
+              <div class="button">
+                <button type="submit" mat-button>Login</button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+          <!--<form>
              <div class="form-group">
                 <label>User Name</label>
                 <input type="text" class="form-control" placeholder="User Name">
@@ -20,8 +41,8 @@
                 <label>Password</label>
                 <input type="password" class="form-control" placeholder="Password">
              </div>
-             <button type="submit" class="btn btn-black" (click) = >Login</button>                         
-          </form>
+             <button type="submit" class="btn btn-black">Login</button>                         
+          </form>-->
        </div>
     </div>
  </div>
