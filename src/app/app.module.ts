@@ -8,13 +8,17 @@ import { HttpClientModule,HttpClient} from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BackgroundComponent } from './background/background.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,    
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    BackgroundComponent,
+    NavbarComponent
   ],
   imports: [
    BrowserModule,
