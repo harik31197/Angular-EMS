@@ -1,1 +1,32 @@
+mat-toolbar
+{
+    background-color: teal;
+   
+}
+.toprow
+{
+    padding: 1em;
+}
+aside{
+    position: fixed;
+    right:20px;
+}
+a{
+    color: whitesmoke;
+    padding: 2em;
+    cursor: pointer;
+    height: 62px;
+    width: 62px;
+}
+a:hover
+{
+  color: palegreen;
+  
+}
 
+img
+{
+    height: 62px;
+    width: 62px;
+    border-radius: 20%;
+}
