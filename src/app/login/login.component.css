@@ -87,12 +87,10 @@ h2{
     margin-top: -100px;
     text-align: center;
 }
-.logo
+img
 {
-    align-content: center;
-    position: relative;
-    top: -90%;
-    left: -10%;
+    margin-top: -30%;
+    margin-left: -20%;
 }
 
 :host {
@@ -110,6 +108,7 @@ h2{
   mat-card-content {
     display: flex;
     justify-content: center;
+    
   }
 
   .error {
