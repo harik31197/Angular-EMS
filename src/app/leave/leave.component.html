@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<body>
+    <mat-card>
+        <h4>Apply Leave</h4>
+        <mat-form-field class="leaveType">
+            <mat-label>Select Leave leaveType</mat-label>
+            <select matNativeControl required>
+              <option value="volvo">SL</option>
+              <option value="saab">PL</option>
+              <option value="mercedes">CL</option>            
+            </select>
+          </mat-form-field>
+          <mat-form-field class="fromdatePicker">
+            <mat-label>Select From Date</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>            
+          </mat-form-field> 
+          <mat-form-field class="todatePicker">
+                <mat-label>Select to Date</mat-label>
+                <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>            
+              </mat-form-field>   
+          
+                    
+    </mat-card>
+    
+</body>
