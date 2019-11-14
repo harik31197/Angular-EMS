@@ -1,0 +1,14 @@
+body
+{
+    padding-left: 4em;
+    padding-right: 4em;       
+    background-color:wheat;
+}
+mat-card
+{
+    height: 100%;
+}
+.fromdatePicker
+{
+    padding: 2em;
+}
