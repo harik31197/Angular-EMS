@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgroundComponent } from './background/background.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LeaveComponent } from './leave/leave.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NotFoundComponent,
     LoginComponent,
     BackgroundComponent,
-    NavbarComponent
+    NavbarComponent,
+    LeaveComponent
   ],
   imports: [
    BrowserModule,
