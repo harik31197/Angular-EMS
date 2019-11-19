@@ -8,7 +8,50 @@ mat-card
 {
     height: 100%;
 }
+
 .fromdatePicker
+{   
+   margin-left: 2em;
+   font-size: 20px;
+ 
+}
+.todatePicker
 {
-    padding: 2em;
+    margin-left: 5em;
+    font-size: 20px;
+}
+.leaveType
+{
+    margin-left: 5em;    
+}
+
+.secondRow
+{
+    padding: -5em;
+    margin-left: 3em;   
+    
+}
+
+#toSession
+{
+    margin-left: 6.5em;
+    font-size: 20px;
+}
+
+.example-full-width
+{   font-size: 20px;
+    margin-left: 5em;
+}
+
+button
+{
+    left: 10em;
+    top: 5em;
+    background-color: teal;
+    color: white;
+}
+.applyTo
+{
+    padding: -3em;
+    margin-left: 3em;
 }
