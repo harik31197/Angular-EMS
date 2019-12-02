@@ -1,0 +1,42 @@
+body
+{
+    padding-left: 10em;
+    padding-right: 10em;       
+    background-color:wheat;
+    overflow: auto;
+}
+mat-card
+{
+    height: 100%;
+
+}
+table {
+    width: 100%;
+  }
+.attendancecontainer
+{
+    margin-top: 20px;
+}
+th{
+    color: white;
+    background-color: teal;
+}
+.bgGreen {
+    background-color: palegreen
+}
+
+.bgRed {
+    background-color: lightcoral;
+}
+.bggrey
+{
+    background-color: palegoldenrod;
+}
+mat-card-header
+{
+    margin-left: 35%;
+    
+}
+.card-container-center{
+    font-size: 30px;
+}
