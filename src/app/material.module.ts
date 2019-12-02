@@ -2,14 +2,20 @@ import { NgModule } from '@angular/core';
 
 
 
+
 import {
   MatCardModule, 
   MatButtonModule,
   MatInputModule,
   MatTooltipModule,
   MatToolbarModule,
-  MatDatepickerModule,
-  
+  MatIconModule,
+  MatSelectModule,
+  MatDatepickerModule,  
+  MatTableModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatMenuModule,  
   MatNativeDateModule
   
   } from '@angular/material';
@@ -19,9 +25,14 @@ import {
     MatInputModule,
     MatButtonModule,
     MatTooltipModule,
-    MatDatepickerModule,
-    
-    MatNativeDateModule,
+    MatIconModule,
+    MatSelectModule,
+    MatTableModule,
+    MatSnackBarModule,  
+    MatDatepickerModule,    
+    MatNativeDateModule,    
+    MatSortModule,    
+    MatMenuModule,
   MatToolbarModule, 
     ];
 
