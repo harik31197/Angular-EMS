@@ -1,0 +1,31 @@
+body
+{
+    padding-left: 10em;
+    padding-right: 10em;       
+    background-color:wheat;
+    overflow: hidden;
+}
+mat-card
+{
+    height: 100%;
+
+}
+table
+ {
+    width: 100%;
+ }
+ thead{
+     background-color: teal;
+     color: whitesmoke;     
+ }
+ .normalrow
+ {
+     background-color:gainsboro;
+ }
+
+ .adminrow
+ {
+     background-color: goldenrod;
+
+ }
+ 
