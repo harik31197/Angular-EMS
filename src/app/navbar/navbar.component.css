@@ -8,20 +8,30 @@ mat-toolbar
     padding: 1em;
 }
 aside{
-    position: fixed;
-    right:20px;
+    
+   margin-left:53%;
 }
-a{
-    color: whitesmoke;
-    padding: 2em;
-    cursor: pointer;
-    height: 62px;
-    width: 62px;
-}
-a:hover
+.nvbuttons
 {
-  color: palegreen;
-  
+    color: whitesmoke;
+    padding: 0;
+    cursor: pointer;
+    top:8px;
+    height:40px;
+    width:100px;
+}
+
+.class1
+{
+    background-color: rgb(231, 231, 231);
+    color:teal;
+}
+.nvmenu
+{
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20%;
+    padding-top: 0;    
 }
 
 img
