@@ -1,0 +1,64 @@
+body
+{
+    padding-left: 10em;
+    padding-right: 10em;       
+    background-color:rgb(221, 221, 221);
+}
+
+mat-card
+{
+    height: 100%;
+}
+mat-card-title
+{
+    
+    margin-left: 18em;
+   
+
+}
+.card-container-center
+{
+font-size:25px;
+}
+
+form
+{
+    transform: translate(1%,1%);
+    font-size: 15px;
+
+}
+h1
+{
+    padding: 1em; 
+    margin-left: -1em;
+    color: darkcyan;
+    text-align: center;
+
+}
+.splitLeft
+{
+
+    margin-left: 23em;
+}
+
+.right
+{
+    margin-left: 2em;
+}
+button
+{
+    margin-left: 38em;
+    background: darkcyan;
+    color: white;
+}
+.uname
+{
+    margin-left: 9em;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
