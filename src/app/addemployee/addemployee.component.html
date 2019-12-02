@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<body>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="card-container-center">Register New Employee</mat-card-title>
+      </mat-card-header>
+      <form appearance="outline" #form = "ngForm" ngNativeValidate autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+        <div class="splitLeft">            
+        <p>          
+          <mat-form-field appearance="outline" class="left">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Placeholder"  name="first_name" [(ngModel)]="user.first_name" required>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="right">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Enter LastName" name="last_name" [(ngModel)]="user.last_name" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+           </mat-form-field>
+        </p>
+        <p>
+           <mat-form-field appearance="outline" class="left">
+           <mat-label>Age</mat-label>
+           <input type="number"  matInput placeholder="Enter Age" name="age" [(ngModel)]="user.emp_age" required>
+           <mat-icon matSuffix>calendar_today</mat-icon>
+           </mat-form-field>
+
+             <mat-form-field  appearance="outline" class="right">
+                <mat-label>Date of Birth</mat-label>
+                <input  matInput [matDatepicker]="picker3" name = "emp_dob" [(ngModel)]="user.dob" placeholder="Choose a date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3></mat-datepicker>            
+              </mat-form-field> 
+        </p>
+        <p>
+                <mat-form-field appearance="outline" class="left">
+                <mat-label>Employee ID</mat-label>
+                <input type="number" matInput placeholder="Enter Employee ID" name="emp_id" [(ngModel)] = "user.emp_id" required>
+                <mat-icon matSuffix>assignment</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="right">
+                         <mat-label>Email ID</mat-label>
+                         <input type="email" matInput placeholder="Placeholder" name="emp_email" [(ngModel)] = "user.emp_email" required>
+                         <mat-icon matSuffix>markunread_mailbox</mat-icon>
+                         </mat-form-field>
+             </p>
+              <p>
+                        <mat-form-field appearance="outline" class="left">
+                        <mat-label>Department</mat-label>
+                        <mat-select name="department" [(ngModel)] = "user.emp_dept"  placeholder=" Department" required>
+                          <mat-option *ngFor = "let department of department" [value] = "department.viewValue">{{department.viewValue}}</mat-option>
+                        </mat-select>                       
+                        <mat-icon matSuffix>room</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="right">
+                                <mat-label>Designation</mat-label>
+                                <input type="text" matInput placeholder="Placeholder" name="emp_desig" [(ngModel)] = "user.emp_desig" required>
+                                <mat-icon matSuffix>accessibility_new</mat-icon>
+                        </mat-form-field>
+                     </p>
+
+                     <p>
+                            <mat-form-field appearance="outline" class="left">
+                            <mat-label>Blood Group</mat-label>
+                            <mat-select name="blood" [(ngModel)] = "user.emp_bloodgroup"  placeholder="Blood Group" required>
+                              <mat-option *ngFor = "let blood of blood" [value] = "blood.viewValue">{{blood.viewValue}}</mat-option>
+                            </mat-select>                                   
+                            <mat-icon matSuffix>invert_colors</mat-icon>
+                            </mat-form-field>
+    
+                            <mat-form-field  appearance="outline" class="right">
+                                    <mat-label>Date Of Joining</mat-label>
+                                    <input [min]="minDate" [max]="maxDate" matInput [matDatepicker]="picker4" placeholder="Choose a date" name="emp_ emp_joiningdate" [(ngModel)] = "user.emp_joiningdate" required>
+                                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker4></mat-datepicker>            
+                                  </mat-form-field> 
+                         </p>
+                         <p>
+                                <mat-form-field appearance="outline" class="uname">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Placeholder" name="username" [(ngModel)] = "user.username" required>
+                                <mat-icon matSuffix>perm_identity</mat-icon>
+                                </mat-form-field>
+                         </p>
+        </div>
+        <button mat-raised-button type="submit"   [disabled]="form.form.invalid">Add Employee</button> 
+      </form>               
+    </mat-card> 
+</body>
