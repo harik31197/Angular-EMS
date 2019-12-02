@@ -1,57 +1,63 @@
 body
 {
-    padding-left: 4em;
-    padding-right: 4em;       
+    padding-left: 10em;
+    padding-right: 10em;       
     background-color:wheat;
 }
+
 mat-card
 {
     height: 100%;
 }
+mat-card-title
+{
+    
+    margin-left: 18em;
+   
 
-.fromdatePicker
-{   
-   margin-left: 2em;
-   font-size: 20px;
- 
 }
-.todatePicker
+.card-container-center
 {
-    margin-left: 5em;
-    font-size: 20px;
+font-size:25px;
 }
-.leaveType
+.container
 {
-    margin-left: 5em;    
+    position: relative;
+    left:6em;
 }
-
-.secondRow
+p
 {
-    padding: -5em;
-    margin-left: 3em;   
+    transform:translate(15%,50%);
+}
+.center
+{
+    left:120px;
+}
+.right
+{
+    margin-left: 3em;
+}
+mat-form-field
+{
+    width: 25%;
+}
+.btnApply
+{
+    left: 190px;
+    top:10px;
     
 }
-
-#toSession
+input[name="days"],[name="balance"]
 {
-    margin-left: 6.5em;
-    font-size: 20px;
+    cursor:not-allowed;
 }
-
-.example-full-width
-{   font-size: 20px;
-    margin-left: 5em;
-}
-
-button
-{
-    left: 10em;
-    top: 5em;
-    background-color: teal;
+.btnApply{
+    background-color:teal;
     color: white;
+    
 }
-.applyTo
+.btnCancel
 {
-    padding: -3em;
-    margin-left: 3em;
+    left: 200px;
+    top:10px;
 }
