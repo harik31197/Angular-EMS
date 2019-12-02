@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<body>
+    <mat-card> 
+            <mat-card-header>
+                    <mat-card-title class="card-container-center">Employee List</mat-card-title>
+                    <div class="searchform">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Search</mat-label>
+                                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                            </mat-form-field>
+                            </div>
+            </mat-card-header>  
+            <div class="employeecontainer">
+                    <mat-card-content>
+                            <div class="example-container mat-elevation-z8">    
+                                <table  matSort class="table">
+                                    <thead>
+                                        <tr>                           
+                                
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>                                            
+                                            <th scope="col">Date of Birth</th>
+                                            <th scope="col">Date of Joining</th>
+                                            <th scope="col">Email ID</th> 
+                                            <th scope="col">Department</th>
+                                            <th scope="col">Designation</th>
+                                            <th scope="col">Blood Group</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let emp of employees" [ngClass] = "{'adminrow':emp.id=='1','normalrow':emp.id!='1'}">
+                                            <td>{{emp.id}}</td>
+                                            <td>{{emp.Name}}</td>
+                                            <td>{{emp.birthday|date:'mediumDate'}}</td>
+                                            <td>{{emp.doj|date:'mediumDate'}}</td>
+                                            <td>{{emp.email}}</td>                                      
+                                                                                      
+                                            <td>{{emp.department}}</td>
+                                            <td>{{emp.designation}}</td>
+                                            <td>{{emp.bloodgroup}}</td>
+                                        </tr >
+                                    </tbody>
+                                </table> 
+                            </div>
+                            </mat-card-content>
+            </div>
+
+        </mat-card>
+        </body>
