@@ -11,6 +11,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BackgroundComponent } from './background/background.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LeaveComponent } from './leave/leave.component';
+import { AddemployeeComponent } from './addemployee/addemployee.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { VerifyemployeeComponent } from './verifyemployee/verifyemployee.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 
 @NgModule({
@@ -20,14 +27,20 @@ import { LeaveComponent } from './leave/leave.component';
     LoginComponent,
     BackgroundComponent,
     NavbarComponent,
-    LeaveComponent
+    LeaveComponent,
+    AddemployeeComponent,    
+    AttendanceComponent,  
+    VerifyemployeeComponent,  
+    ForgotpasswordComponent, 
+    DashboardComponent
   ],
   imports: [
    BrowserModule,
    AppRoutingModule,
-   FormsModule,
+   FormsModule,  
    HttpClientModule,
    MaterialModule,
+   ReactiveFormsModule,
    BrowserAnimationsModule
   ],
   providers: [],
