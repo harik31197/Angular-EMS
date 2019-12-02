@@ -1,45 +1,56 @@
-<div class="sidenav">
-    <div class="login-main-text">
-       <h2>Welcome to HR Zone</h2>
-       <p class="pline">The Zone where Humans are Resourced</p>
-    </div>
- </div>
- <div class="main">
-     <div class="icon">
-         <img  src="../../assets/icon.jpg" alt="alt">
+<body>
+  <div class="sidenav">
+   <div class="login-main-text">
+      <h2>Welcome to HR Zone</h2>
+      <p class="pline">The Zone where Humans are Resourced</p>
+   </div>
+  
+</div>
+<div class="main">
+   <div class="icon">
+       <img  src="../../assets/icon.jpg" alt="alt">
+   </div>
+   <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+            <mat-card-title>Login</mat-card-title>
+            <mat-card-content>
+                  <form method = "post" #form = "ngForm" (ngSubmit)="onSubmit(form)" class="form-signin">                               
+                      <mat-form-field>
+                        <input type="text" autocomplete="off" matInput placeholder="Username" name="username" [(ngModel)]="empLogin.username" #unamefield = "ngModel"  required="required">                                            
+                        <mat-icon matSuffix>supervised_user_circle</mat-icon>
+                      </mat-form-field>
+                      <div *ngIf="unamefield.invalid && (unamefield.dirty)" class="valerror">                                                 
+                        <div *ngIf="unamefield.errors.required">
+                            Username Mandatory
+                        </div>
+                        </div>                  
+                   
+                      <mat-form-field>
+                        <input type="password" matInput placeholder="Password" name="password" minlength="5" [(ngModel)]="empLogin.password"  #pwordfield = "ngModel"  required="required">                       
+                        <mat-icon matSuffix>https</mat-icon>
+                      </mat-form-field>
+                      <div *ngIf="pwordfield.invalid && (pwordfield.dirty || pwordfield.touched)" class="valerror">
+                        
+                        <div *ngIf="pwordfield.errors.minlength">
+                          Password must be at least 5 characters long.
+                        </div>
+                        <div *ngIf="pwordfield.errors.required">
+                            Password is Required
+                        </div>
+                        </div>
+                        <div [hidden]="!errorStatus" class="alert alert-danger">
+                            {{errorMessage}}    
+                        </div>
+                        <div id="fpword" (click)="redirect()">Forgot Password?</div>
+
+                              
+                    <button type="submit"  [disabled]="form.form.invalid" mat-button>Login</button>         
+                  </form>
+                </mat-card-content>
+        </div>
      </div>
-    <div class="col-md-6 col-sm-12">
-       <div class="login-form">
-        
-          <mat-card-title>Login</mat-card-title>
-          <mat-card-content>
-            <form #form = "ngForm" (ngSubmit)="onSubmit(form)">
-              <div>
-                <mat-form-field>
-                  <input type="text" matInput placeholder="Username" name="username" ngModel  required>
-                </mat-form-field>
-              </div>
-              <div>
-                <mat-form-field>
-                  <input type="text" matInput placeholder="Password" name="password" ngModel  required>
-                </mat-form-field>
-              </div>              
-              <button type="submit"  [disabled]="form.form.invalid" mat-button>Login</button>         
-            </form>
-          </mat-card-content>
-        
-          <!--<form>
-             <div class="form-group">
-                <label>User Name</label>
-                <input type="text" class="form-control" placeholder="User Name">
-             </div>
-             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password">
-             </div>
-             <button type="submit" class="btn btn-black">Login</button>    
-             https://image.flaticon.com/icons/svg/56/56767.svg                     
-          </form>-->
-       </div>
+   
+   
     </div>
- </div>
+    </body>
+  
