@@ -14,13 +14,13 @@ import { MatSnackBar, MatSnackBarConfig, MatSnackBarHorizontalPosition, MatSnack
 })
 export class VerifyemployeeComponent implements OnInit {
 
-  smessage: string = 'Employee Added';
+  smessage: string = 'Password has been Set';
   actionButtonLabel: string = 'Close';
   action: boolean = true;
   setAutoHide: boolean = true;
   autoHide: number = 2000;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom'
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   
 
   empInstance:VerifyEmployee = 
@@ -31,7 +31,7 @@ export class VerifyemployeeComponent implements OnInit {
   };
 
   errorStatus=false;
-  errorStatusMessage=""
+  errorStatusMessage="";
 
   passwordStatus=false;
   passswordStatusMessage="nil";
