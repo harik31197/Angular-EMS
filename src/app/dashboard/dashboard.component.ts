@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { EmpCont } from '../data/contacts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,14 +9,19 @@ import { EmpCont } from '../data/contacts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private http:HttpClient) { }
+  isAdmin = localStorage.getItem('empid');  
+  name=localStorage.getItem('empname'); 
+  
+  constructor(private http:HttpClient,private router:Router) { }
 
   employees:any[];
   tempemployees:any=[];
 
   ngOnInit() {
-   
+    if(this.isAdmin==null)
+    this.router.navigate(['/error']);
+    var currentID = parseInt(this.isAdmin);
+    
     console.log('inside onit()');
     this.http.get<EmpCont[]>('https://localhost:44374/api/getemployees').subscribe(  
       (result: any) => {
