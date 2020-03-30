@@ -1,28 +1,27 @@
-<mat-toolbar >
-<div>
-    <img src="../../assets/icon.jpg" alt="icon">
-</div>
+<mat-toolbar>
+    <div>
+        <img src="../../assets/icon.jpg" alt="icon">
+    </div>
     <div class="toprow">
         <!--<a href="" style="text-decoration:none"  >Home</a>
         <a href = "" style="text-decoration:none" [routerLink] ="'/attendance'">Attendance</a>
         <a href = "" style="text-decoration:none">Leave</a> -->
-        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']"  [routerLink]="'/dashboard'">Home</button>        
-        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']" [routerLink]="'/attendance'">Attendance</button>
-        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']" [matMenuTriggerFor]="actionMenu">Actions</button> 
+        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']" [routerLink]="'/dashboard'">Home</button>
+        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']"
+            [routerLink]="'/attendance'">Attendance</button>
+        <button class="nvbuttons" mat-button [routerLinkActive]="['class1']"
+            [matMenuTriggerFor]="actionMenu">Actions</button>
         <mat-menu #actionMenu="matMenu" yPosition="above">
-                <button class="nvmenu" *ngIf="isAdmin=='1'" mat-menu-item [routerLink]="'/addemployee'">Add Employee</button>
-                <button class="nvmenu" mat-menu-item [routerLink]="'/leave'">Apply Leave</button>
-              </mat-menu>
-       
-        
-        <!--<a mat-button style="text-decoration:none"  [matMenuTriggerFor]="directoryMenu"> Actions</a>
-        <mat-menu #actionMenu = "matMenu">
-                <button mat-menu-item [routerLink]="'/addemployee'"  >Add New Employee</button>
-                <button mat-menu-item [routerLink]="'/leave'"  >Apply Leave</button>        
-        </mat-menu>-->           
-       
+            <button class="nvmenu" *ngIf="isAdmin=='1'" [routerLinkActive]="['class1']" mat-menu-item [routerLink]="'/addemployee'">Register
+                Employee</button>
+            <button class="nvmenu" mat-menu-item [routerLinkActive]="['class1']" [routerLink]="'/leave'">Apply Leave</button>
+        </mat-menu>
+    </div>
+    <div class="nameTag">
+        Welcome {{name|uppercase}}
     </div>
     <aside>
-            <button class="nvbuttons" [routerLinkActive]="['class1']" mat-button  (click)="onLogout()">Logout</button> 
+        <mat-icon (click)="onLogout()">home</mat-icon>
+        <!-- <button class="nvbuttons" [routerLinkActive]="['class1']" mat-button  (click)="onLogout()">Logout</button> -->
     </aside>
 </mat-toolbar>
