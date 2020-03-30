@@ -2,17 +2,25 @@ body
 {
     padding-left: 10em;
     padding-right: 10em;       
-    background-color:wheat;
+    background-color:rgb(221, 221, 221);
     overflow: auto;
 }
 mat-card
 {
     height: 100%;
-
 }
-table {
+
+.table {
+    bottom: 10px;
     width: 100%;
+    max-height: 3%;
+    overflow-y: scroll;
   }
+  .empty
+  {
+      color: red;
+  }
+
 .attendancecontainer
 {
     margin-top: 20px;
@@ -30,13 +38,6 @@ th{
 }
 .bggrey
 {
-    background-color: palegoldenrod;
+    background-color: rgb(177, 177, 177);
 }
-mat-card-header
-{
-    margin-left: 35%;
-    
-}
-.card-container-center{
-    font-size: 30px;
-}
+
