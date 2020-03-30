@@ -9,6 +9,8 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { VerifyemployeeComponent } from './verifyemployee/verifyemployee.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 
@@ -23,7 +25,9 @@ const routes: Routes = [
  { path: 'VerifyAccount/:id', component : VerifyemployeeComponent},
  { path: 'forgotpassword', component : ForgotpasswordComponent},
  { path: 'dashboard',component : DashboardComponent},
- { path: '**', redirectTo: '/404', pathMatch: 'full'}
+ { path: 'resetpassword/:id',component : ResetpasswordComponent},
+ { path: 'landingpage',component : LandingPageComponent},
+{ path: '**', redirectTo: '/error', pathMatch: 'full'}
 ];
 
 @NgModule({
