@@ -1,5 +1,5 @@
 export class ForgotPassword
 {
-    email:string;
-    empid:number;
+     email:string;
+    emp_id:number;
 }
