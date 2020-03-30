@@ -12,7 +12,7 @@ export class Employee
     emp_dept:string;
     emp_desig:string;
     username :string;
-    emp_age:number;
+    //emp_age:number;
     /*id:number;
     Name:string;
     email:string;
