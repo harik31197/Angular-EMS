@@ -9,18 +9,53 @@ mat-toolbar
 }
 aside{
     
-   margin-left:53%;
+   margin-left:37%;
+
+  
+   
+}
+.nameTag
+{
+    color: white;
+    width: 25%;
+    position: relative;
+    left: 37%;
+    text-align: center;
+}
+.greet
+{
+    margin-left:50em;
+    color: white;
+   position: relative;
+   bottom: 17px;
 }
 .nvbuttons
 {
     color: whitesmoke;
     padding: 0;
     cursor: pointer;
-    top:8px;
+    top:1px;
+    left: 40px;
     height:40px;
     width:100px;
 }
-
+.nvbuttons:focus{
+    outline: none;
+}
+.nvbuttons:hover
+{
+    background-color: rgb(13, 150, 150);
+}
+mat-icon
+{
+    color: whitesmoke;
+    cursor: pointer;  
+    font-size: 35px;   
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+   
+}
 .class1
 {
     background-color: rgb(231, 231, 231);
@@ -30,13 +65,15 @@ aside{
 {
     background-color: whitesmoke;
     color: black;
-    border-radius: 20%;
+    outline: none;
     padding-top: 0;    
 }
 
 img
 {
-    height: 62px;
+    height: 50px;
     width: 62px;
-    border-radius: 20%;
+    position: relative;
+    left: 19px;
+    border-radius: 10%;
 }
