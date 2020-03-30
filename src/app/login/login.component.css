@@ -1,3 +1,10 @@
+body{
+    width: 450px;
+    overflow-x:hidden;
+    position: relative;
+    left: 110px;
+    bottom: 40px;
+}
 .sidenav {
     background-color: rgb(62, 179, 163);    
     padding-top: 20px;
@@ -7,6 +14,26 @@
 {
     padding: 0px 10px;
           
+}
+.pic
+{
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 60px;
+    top: 40px;
+    border-radius: 50%;
+}
+.ptop
+{
+    font-size: 30px;
+    margin-left:27px;
+}
+.greet
+{
+    font-size: 30px;
+    margin-left: 74px;
+
 }
 #fpword
 {
@@ -58,7 +85,7 @@
 
 
 .login-main-text{
-    margin-top: 20%;
+    margin-top: 10%;
     padding: 60px;
     color: #fff;
 }
@@ -79,17 +106,19 @@
     background-color: #000 !important;
     color: #fff;
 }
+
 .pline
 {
     padding: 0%;
     text-align: center;
     margin-top: -10px;
+    font-size:20px;
     
 }
-h2{
-    position: relative;
-    margin-top: -100px;
-    text-align: center;
+img{
+ position: relative;
+    
+    right: 71px;
 }
 
 
@@ -126,10 +155,17 @@ button{
 }
 .valerror
 {
-    color: red;    
+    color: red; 
+    position: relative;
+    bottom: 15px;   
 
 }
 mat-card-title
 {
     font-size: 20px;
+}
+.login-form
+{
+    position: relative;
+    right: 30px;    
 }
