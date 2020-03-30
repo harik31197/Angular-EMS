@@ -16,8 +16,8 @@ import { AttendanceComponent } from './attendance/attendance.component';
 import { VerifyemployeeComponent } from './verifyemployee/verifyemployee.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
-
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AttendanceComponent,  
     VerifyemployeeComponent,  
     ForgotpasswordComponent, 
-    DashboardComponent
+    DashboardComponent, 
+    ResetpasswordComponent, LandingPageComponent
   ],
   imports: [
    BrowserModule,
