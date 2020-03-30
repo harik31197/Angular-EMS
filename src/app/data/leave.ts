@@ -8,6 +8,8 @@ export class Leave
     leave_type_type_id:number;
     apply_to:string; 
     leave_type:string;
+    Employee_emp_id:number;
+    balance:number;
     
 
 }
