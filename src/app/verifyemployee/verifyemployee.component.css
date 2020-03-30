@@ -2,7 +2,7 @@ body
 {
     padding-left: 10em;
     padding-right: 10em;       
-    background-color:wheat;
+    background-color:rgb(221, 221, 221);
 }
 mat-card
 {
@@ -36,9 +36,12 @@ form{
     
   justify-content: center;
   transform: translate(40%,50%);
+  height: 200px;
 
 }
 .valerror
 {
     color: red;
+    position: relative;
+    bottom: 15px;
 }
