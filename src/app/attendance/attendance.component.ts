@@ -22,9 +22,18 @@ export class AttendanceComponent implements OnInit {
   tempAttendance:any=[];  
   sempid:string;
   eid:number;
+  filters=['Present','On Leave','None'];
+  public searchText: string;
+  isEmpty:boolean;
 
-  ngOnInit() {
-    if(this.isAdmin==null)
+  ngOnInit()
+{
+    this.getAttendance();    
+}
+
+getAttendance()
+{
+  if(this.isAdmin==null)
     this.router.navigate(['/404']);
     
      this.sempid=localStorage.getItem('empid');
@@ -37,11 +46,30 @@ export class AttendanceComponent implements OnInit {
         }),
           error => console.log(error)
         )
+       // console.log(this.attendance.length);
+        console.log(this.tempAttendance.length);
+        this.attendance = this.tempAttendance;
+        this.isEmpty = this.attendance.length == 0 ? true:false;    
+        console.log(this.isEmpty);
       }
+     
     );
-    this.attendance = this.tempAttendance;
+    
+    
+   
+   
     this.sempid='';
-    this.eid=null;
+    this.eid=null;    
 }
+
+track()
+    {
+      this.attendance.forEach(row=>
+        {
+          if(row.Status=='!On Leave')
+          this.attendance.pop();
+        });
+        console.log(this.attendance);
+    }
 
 }
