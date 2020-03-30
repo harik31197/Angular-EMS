@@ -1,35 +1,41 @@
 <app-navbar></app-navbar>
+
 <body>
-    <mat-card>  
-        <mat-card-header>
-                <mat-card-title class="card-container-center">Attendance Sheet</mat-card-title>
-        </mat-card-header>    
-        <div class="attendancecontainer">
-                <mat-card-content>
-                        <div class="example-container mat-elevation-z8">
-                            <table class="table">
-                                <thead>
-                                    <tr>                          
-                            
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">FirstIN</th>
-                                        <th scope="col">LastOut</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let a of attendance" [ngClass]="{'bgGreen': a.statusemp == 'Present','bgRed': a.statusemp =='On Leave','bggrey':a.statusemp == 'Holiday'}">
-                                        <td>{{a.employee_id}}</td>
-                                        <td>{{a.dateofentry|date}}</td>
-                                        <td>{{a.firstin }}</td>
-                                        <td>{{a.lastout }}</td>
-                                        <td>{{a.statusemp}}</td>
-                                    </tr >
-                                </tbody>
-                            </table>
-                            
-           <!--- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-container-center">Attendance Sheet</mat-card-title>
+    </mat-card-header>
+    
+    <div class="attendancecontainer">
+      <mat-card-content>       
+
+
+        <div class="example-container mat-elevation-z8">
+          
+          <p class="alert alert-info text-center center-display" *ngIf="isEmpty">Attendance has not yet been updated! Please try later!</p>
+          <table class="table" [hidden] = "isEmpty">
+            <thead>
+              <tr>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">First In</th>
+                <th scope="col">Last Out</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of attendance"
+                [ngClass]="{'bgRed': a.statusemp =='On Leave','bggrey':a.statusemp == 'Holiday','bgGreen':a.statusemp=='Present'}">
+                <td>{{a.employee_id}}</td>
+                <td>{{a.dateofentry|date:'fullDate'}}</td>
+                <td>{{a.firstin|slice:0:8}}</td>
+                <td>{{a.lastout|slice:0:8}}</td>                
+                <td>{{a.statusemp}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!--- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                 <h1>Attendance</h1>
 
              Note that these columns can be defined in any order.
@@ -68,13 +74,13 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>   ---->
-          </div>
-          </mat-card-content>
-        </div>  
-    </mat-card>
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </body>
 
 <!--<ng-container matColumnDef="status">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
                 <mat-cell *matCellDef="let emp"> {{emp.status}} </mat-cell>
-              </ng-container>  -->     
+              </ng-container>  -->
