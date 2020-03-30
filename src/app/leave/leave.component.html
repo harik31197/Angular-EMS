@@ -1,88 +1,120 @@
 <app-navbar></app-navbar>
+
 <body>
-    <mat-card [class.mat-elevation-z2]>
-        <mat-card-header>
-            <mat-card-title class="card-container-center">Apply Leave</mat-card-title>
-          </mat-card-header>
-        <form appearance="outline" #leaveform = "ngForm" ngNativeValidate autocomplete="off" (ngSubmit)="onApply(leaveform)">
-        <div class="container">
-          <p>
-              <mat-form-field appearance="outline" class="center">
-                  <mat-label>Leave Type</mat-label>
-                  <mat-select name="leavetype" [(ngModel)] = "applyLeave.leave_type"  placeholder=" Leave Type" required>
-                    <mat-option *ngFor = "let types of leaveTypes" [value] = "201">{{types}}</mat-option>
-                  </mat-select>                       
-                  <mat-icon matSuffix>merge_type</mat-icon>
-                  </mat-form-field>
-          </p>         
-          <p>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="card-container-center">Actions<mat-icon class="spl">forward</mat-icon>Apply Leave</mat-card-title>
+    </mat-card-header>
+    <form appearance="outline" #leaveform="ngForm" ngNativeValidate  autocomplete="off" (ngSubmit)="onApply(leaveform)">
+      <div class="container">
 
-              <mat-form-field class="fromdatePicker" class="left">
-                  <mat-label>Select From Date</mat-label>
-                  <input matInput [matDatepicker]="picker1" name="from_date" [(ngModel)]="applyLeave.from_date" placeholder="Choose a date" required >
-                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>     
-                  <div [hidden]="!sickLeaveStatus" class="alert alert-danger">
-                    {{errorMessage}}    
-                </div>                         
-                </mat-form-field> 
-
-              <mat-form-field appearance="outline" class="right">
-                  <mat-label>From Session</mat-label>
-                  <mat-select name="from_session" [(ngModel)] = "applyLeave.from_session"  placeholder="From Session" required>
-                    <mat-option *ngFor = "let sesstypes of sessionTypes" [value] = "a">{{sesstypes}}</mat-option>
-                  </mat-select>                       
-                  <mat-icon matSuffix>schedule</mat-icon> 
-              </mat-form-field>             
-
-          </p> 
-          <p>
-
-              <mat-form-field class="todatePicker" class="left">
-                  <mat-label>Select to Date</mat-label>
-                  <input matInput [matDatepicker]="picker2" name = "to_date" [(ngModel)]="applyLeave.to_date" placeholder="Choose a date" required>
-                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>            
-                </mat-form-field>
-
-
-              <mat-form-field appearance="outline" class="right">
-                  <mat-label>To Session</mat-label>
-                  <mat-select name="to_session"  [(ngModel)] = "applyLeave.to_session" placeholder="To Session" required>
-                    <mat-option *ngFor = "let sessionType of sessionType" [value] = "sessionType.key">{{sessionType.value}}</mat-option>
-                  </mat-select>                       
-                  <mat-icon matSuffix>schedule</mat-icon> 
-              </mat-form-field>         
-
-          </p>
-          <p>
-              <mat-form-field appearance = "outline" id="days"  class="left">                  
-                  <input readonly matInput placeholder="Days" name="days"/>
-                </mat-form-field> 
-
-                <mat-form-field appearance = "outline" id="balance" class="right">                  
-                    <input readonly matInput placeholder="balance" name="balance"/>
-                  </mat-form-field> 
-          </p>          
-          <p>
-              <mat-form-field  class="example-full-width" appearance="outline" class="center">
-                  <textarea matInput placeholder="Reason" name="reason" [(ngModel)]="applyLeave.leave_description" required></textarea>
-                  
-                </mat-form-field>
-
-                <mat-form-field  class="example-full-width" appearance="outline" class="center">
-                  <textarea matInput placeholder="ApplyTo" name="applyto" [(ngModel)]="applyLeave.apply_to" required></textarea>                  
-                </mat-form-field>
-          </p>  
-          <p>   
-        <button mat-raised-button class="btnApply">Apply</button>   
-        <button mat-raised-button class="btnCancel">Cancel</button>
+        <p>
+          <mat-form-field appearance="outline" class="center">
+            <mat-label>Leave Type</mat-label>
+            <mat-select name="leave_type" [(ngModel)]="applyLeave.leave_type" #leavetypefield="ngModel"
+              placeholder=" Leave Type"  required>
+              <mat-option *ngFor="let types of leaveTypes" onSelectionChange ="refreshMessages()" [value]="types">{{types}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>merge_type</mat-icon>
+          </mat-form-field>
         </p>
-        </div>         
-      </form>
-      </mat-card>    
-    </body>
-        <!--<form [formGroup] ='leaveForm'  ngNativeValidate autocomplete="off" (ngSubmit)="onSubmit()">
+        <p>
+
+          <mat-form-field class="fromdatePicker" class="left">
+            <mat-label>Select From Date</mat-label>
+            <input matInput [matDatepicker]="picker1" [min]="minDate" [max]="maxDate" name="from_date" [(ngModel)]="applyLeave.from_date"
+              placeholder="Choose a date" #fromDateField="ngModel" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="right">
+            <mat-label>From Session</mat-label>
+            <mat-select name="from_session" [(ngModel)]="applyLeave.from_session"  #fromsessionfield="ngModel"
+              placeholder="From Session" required>
+              <mat-option *ngFor="let sesstypes of sessions" [value]="sesstypes">{{sesstypes}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>schedule</mat-icon>
+          </mat-form-field>
+
+        </p>       
+        <div [hidden]="!dateValidStatus" id="errorss">
+          {{dateValidMessage}}
+        </div>
+        <div [hidden]="!sickLeaveStatus" id="errorss">
+          {{sickLeaveMessage}}
+        </div>
+
+        <p>
+
+          <mat-form-field class="todatePicker" class="left">
+            <mat-label>Select to Date</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker2"   name="to_date" [(ngModel)]="applyLeave.to_date"
+              placeholder="Choose a date" #todatefield="ngModel" required>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+
+          <mat-form-field appearance="outline" class="right">
+            <mat-label>To Session</mat-label>
+            <mat-select name="to_session" [(ngModel)]="applyLeave.to_session" #tosessionfield="ngModel"
+              placeholder="To Session" required>
+              <mat-option *ngFor="let sesstypes of sessions" [value]="sesstypes">{{sesstypes}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>schedule</mat-icon>
+          </mat-form-field>
+
+        </p>
+        <p [hidden] = "!status">
+            <mat-form-field class="example-full-width" appearance="outline" class="left">
+                <mat-label>Days</mat-label>  
+                  <input class="applyto" readonly matInput placeholder="Days" name="days" value="{{days}}" />   
+                       </mat-form-field>          
+          
+          
+              <mat-form-field class="example-full-width" appearance="outline" class="right">
+                  <mat-label>Balance</mat-label>
+    
+                    <input class="applyto" readonly matInput placeholder="ApplyTo" name="applyto" value="{{applyLeave.balance}}" />
+                  </mat-form-field>
+          </p>
+          <div [hidden]="!eligibleStatus" id="err">
+              {{eligibleMessage}}
+            </div>   
+        <!--<p>
+          <mat-form-field appearance="outline" id="days" class="left">
+            <input readonly matInput placeholder="Days" type="number" [value]=days name="days" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" id="balance" class="right">
+            <input readonly matInput placeholder="balance" type="number" [value]=balance name="balance" />
+          </mat-form-field>
+        </p>-->
+        <p class="res">
+          <mat-form-field class="example-full-width" appearance="outline" class="center">
+            <textarea matInput placeholder="Reason" name="reason" [(ngModel)]="applyLeave.leave_description"
+              #reasonfield="ngModel" required></textarea>
+
+          </mat-form-field>          
+        </p>
+        <p class="res">
+            <mat-form-field class="example-full-width" appearance="outline" class="center">
+              <mat-label>Apply To:</mat-label>
+
+                <input class="applyto" readonly matInput placeholder="ApplyTo" name="applyto" value="Sourav" />
+              </mat-form-field>
+        </p>
+             
+        <p class="btns">
+          <button mat-raised-button class="btnApply" (click)="onAppear()">Apply</button>
+          <button mat-raised-button class="btnCancel" (click)="onReset()">Reset</button>
+        </p>
+      </div>
+    </form>
+  </mat-card>
+</body>
+<!--<form [formGroup] ='leaveForm'  ngNativeValidate autocomplete="off" (ngSubmit)="onSubmit()">
       <div class="container">
       <div class="firstRow">    
         
@@ -165,4 +197,3 @@
               <button mat-raised-button (click) = "reset()" type="reset">Reset</button>   
               </div>
             </form>-->
-   
